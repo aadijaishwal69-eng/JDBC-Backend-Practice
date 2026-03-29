@@ -10,12 +10,26 @@ The goal of this project is to understand and practice how Java applications com
 
 - JDBC connection setup using `DriverManager`
 - Secure queries using `PreparedStatement`
-- INSERT operation
-- UPDATE operation
-- DELETE operation
+- INSERT, UPDATE, DELETE operations
 - SELECT operation using `ResultSet`
 - Understanding auto-commit behavior and basic transaction handling
 - Building a menu-driven console-based CRUD application
+- DAO (Data Access Object) pattern
+- Layered application structure
+- Separation of concerns
+
+---
+
+## 🧱 Architecture
+
+The project follows a layered structure:
+
+- **Main** → Entry point of the application
+- **MenuService** → Handles user input and menu logic
+- **CustomerDAO** → Handles database operations (CRUD)
+- **DBConnection** → Provides database connection
+
+This separation improves readability, maintainability, and follows basic backend design principles.
 
 ---
 
@@ -27,12 +41,11 @@ All source files are located inside:
 src/com/aditya/jdbc/
 ```
 
-- `JDBCConnectionTest.java` → Tests and verifies database connectivity
-- `Insert.java` → Adds new records to the database
-- `Update.java` → Updates existing records
-- `Delete.java` → Deletes records from the database
-- `Select.java` → Fetches and displays records using ResultSet
-- `CRUD.java` → Interactive menu-driven console application
+- `DBConnection.java` → Handles database connection setup
+- `CustomerDAO.java` → Contains all CRUD operations
+- `MenuService.java` → Handles menu and user interaction
+- `Main.java` → Entry point of the application
+- `Test.java` → Initial JDBC connection test
 
 ---
 
@@ -60,7 +73,7 @@ Add the MS SQL JDBC JAR file to your project libraries.
 Update the `url`, `username`, and `password` inside the Java files according to your local SQL Server setup.
 
 ### 4️⃣ Run the Application
-Run `CRUD.java` to start the interactive console application.
+Run `Main.java` to start the interactive console application.
 
 ---
 
@@ -85,6 +98,6 @@ Through this project, I gained practical experience in:
 - Executing parameterized SQL queries safely
 - Retrieving and processing data using `ResultSet`
 - Understanding transaction behavior and auto-commit
-- Structuring a clean backend-style console application
+- Structuring a clean backend-style console application using DAO pattern
 
 This repository represents my step-by-step learning journey into JDBC and backend database interaction.
