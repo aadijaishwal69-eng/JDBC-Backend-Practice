@@ -1,103 +1,169 @@
 # JDBC Backend Practice 🚀
 
-This repository contains hands-on practice programs built using **Java JDBC** to interact with a Microsoft SQL Server database.
+This repository contains hands-on backend development practice using **Java JDBC** and **Microsoft SQL Server**.
 
-The goal of this project is to understand and practice how Java applications communicate with relational databases and implement full CRUD operations.
+The project started as a CRUD-based customer management application and has gradually expanded to include **transaction management**, **DAO pattern implementation**, and backend programming concepts commonly used in real-world applications.
 
 ---
 
 ## 📌 Concepts Covered
 
+### JDBC Fundamentals
 - JDBC connection setup using `DriverManager`
-- Secure queries using `PreparedStatement`
-- INSERT, UPDATE, DELETE operations
-- SELECT operation using `ResultSet`
-- Understanding auto-commit behavior and basic transaction handling
-- Building a menu-driven console-based CRUD application
+- Database connectivity with Microsoft SQL Server
+- Using `PreparedStatement` for parameterized queries
+- Executing `INSERT`, `UPDATE`, `DELETE`, and `SELECT` operations
+- Processing query results using `ResultSet`
+
+### Backend Design
 - DAO (Data Access Object) pattern
 - Layered application structure
 - Separation of concerns
+- Menu-driven console application
+
+### Transaction Management
+- Manual transaction control using `setAutoCommit(false)`
+- `commit()` and `rollback()`
+- Multi-step database operations
+- Account transfer simulation
+- Transaction failure handling
+- Input validation and account verification
 
 ---
 
 ## 🧱 Architecture
 
-The project follows a layered structure:
+### CRUD Application
 
-- **Main** → Entry point of the application
-- **MenuService** → Handles user input and menu logic
-- **CustomerDAO** → Handles database operations (CRUD)
-- **DBConnection** → Provides database connection
+```text
+Main
+ └── MenuService
+      └── CustomerDAO
+            └── DBConnection
+```
 
-This separation improves readability, maintainability, and follows basic backend design principles.
+- **Main** → Application entry point
+- **MenuService** → Handles menu flow and user interaction
+- **CustomerDAO** → Performs CRUD operations
+- **DBConnection** → Creates database connections
 
 ---
 
 ## 📂 Project Structure
 
-All source files are located inside:
-
+```text
+src/
+└── com/aditya/jdbc
+    ├── app
+    │   ├── Main.java
+    │   ├── MenuService.java
+    │   ├── CustomerDAO.java
+    │   ├── DBConnection.java
+    │   └── Test.java
+    │
+    └── practice
+        └── transaction
+            ├── TransactionDemo.java
+            └── TransactionDemo2.java
 ```
-src/com/aditya/jdbc/
-```
 
-- `DBConnection.java` → Handles database connection setup
-- `CustomerDAO.java` → Contains all CRUD operations
-- `MenuService.java` → Handles menu and user interaction
-- `Main.java` → Entry point of the application
-- `Test.java` → Initial JDBC connection test
+### app
+Contains the DAO-based CRUD application.
+
+### practice/transaction
+Contains transaction management practice programs demonstrating:
+
+- Account balance verification
+- Money transfer simulation
+- Commit and rollback handling
+- Transaction validation logic
 
 ---
 
 ## 🛠️ Tech Stack
 
 - Java (JDK 22)
-- Microsoft SQL Server (SQLEXPRESS)
-- MS SQL JDBC Driver (mssql-jdbc-13.2.1.jre11)
+- Microsoft SQL Server Express (SQLEXPRESS)
+- Microsoft JDBC Driver for SQL Server
 - IntelliJ IDEA
 
 ---
 
 ## 🚀 How to Run
 
-### 1️⃣ Clone the repository
+### 1. Clone Repository
 
-```
+```bash
 git clone https://github.com/aadijaishwal69-eng/JDBC-Backend-Practice.git
 ```
 
-### 2️⃣ Add the JDBC Driver
-Add the MS SQL JDBC JAR file to your project libraries.
+### 2. Add JDBC Driver
 
-### 3️⃣ Configure Database
-Update the `url`, `username`, and `password` inside the Java files according to your local SQL Server setup.
+Add the Microsoft SQL Server JDBC Driver JAR file to your project libraries.
 
-### 4️⃣ Run the Application
-Run `Main.java` to start the interactive console application.
+### 3. Configure Database
+
+Update the database URL, username, and password according to your local SQL Server setup.
+
+### 4. Run
+
+For CRUD application:
+
+```text
+Main.java
+```
+
+For transaction practice:
+
+```text
+TransactionDemo.java
+TransactionDemo2.java
+```
 
 ---
 
-## 💻 Sample Console Menu
+## 💻 Features Implemented
 
-```
-Enter your choice:
-1. Insert
-2. Update
-3. Delete
-4. Select
-5. Exit
-```
+### CRUD Operations
+- Add customer
+- Update customer
+- Delete customer
+- View customer records
+
+### Transaction Practice
+- Verify sender account
+- Verify receiver account
+- Validate transfer amount
+- Check available balance
+- Commit successful transfers
+- Rollback failed transactions
 
 ---
 
-## 🎯 Learning Outcome
+## 🎯 Learning Outcomes
 
-Through this project, I gained practical experience in:
+Through this repository, I gained practical experience in:
 
-- Connecting Java applications to relational databases
-- Executing parameterized SQL queries safely
-- Retrieving and processing data using `ResultSet`
-- Understanding transaction behavior and auto-commit
-- Structuring a clean backend-style console application using DAO pattern
+- JDBC database programming
+- SQL Server integration with Java
+- Secure SQL execution using PreparedStatement
+- CRUD application development
+- DAO pattern implementation
+- Transaction management with commit and rollback
+- Input validation and error handling
+- Building backend-style console applications
 
-This repository represents my step-by-step learning journey into JDBC and backend database interaction.
+---
+
+## 📈 Next Steps
+
+- Refactor transaction logic using DAO classes
+- Introduce service layer for business logic
+- Use BigDecimal for monetary values
+- Improve exception handling
+- Build a complete console-based banking system
+- Learn and implement Spring Boot
+
+---
+
+This repository represents my step-by-step learning journey into Java backend development, JDBC, database interaction, and transaction management.
