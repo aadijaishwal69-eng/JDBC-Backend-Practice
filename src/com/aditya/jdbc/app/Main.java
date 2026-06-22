@@ -1,4 +1,4 @@
-package com.aditya.jdbc;
+package com.aditya.jdbc.app;
 
 public class Main {
     public static void main(String[] args) {

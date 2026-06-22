@@ -1,4 +1,4 @@
-package com.aditya.jdbc;
+package com.aditya.jdbc.app;
 
 import java.sql.*;
 
